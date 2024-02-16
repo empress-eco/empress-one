@@ -1,10 +1,10 @@
 <div align="center">
-    <a href="https://erpnext.com">
-        <img src="https://raw.githubusercontent.com/frappe/erpnext/develop/erpnext/public/images/erpnext-logo.png" height="128">
+    <a href="https://empress.eco/">
+        <img src="https://avatars.githubusercontent.com/u/46308912?s=96&v=4" height="50">
     </a>
-    <h2>ERPNext</h2>
+    <h2>Empress One</h2>
     <p align="center">
-        <p>ERP made simple</p>
+        <p>Focus On Work That Matters.</p>
     </p>
 
 [![CI](https://github.com/frappe/erpnext/actions/workflows/server-tests-mariadb.yml/badge.svg?event=schedule)](https://github.com/frappe/erpnext/actions/workflows/server-tests-mariadb.yml)
@@ -12,74 +12,53 @@
 [![codecov](https://codecov.io/gh/frappe/erpnext/branch/develop/graph/badge.svg?token=0TwvyUg3I5)](https://codecov.io/gh/frappe/erpnext)
 [![docker pulls](https://img.shields.io/docker/pulls/frappe/erpnext-worker.svg)](https://hub.docker.com/r/frappe/erpnext-worker)
 
-[https://erpnext.com](https://erpnext.com)
+[https://empress.eco/app/one/](https://empress.eco/app/one/)
 
 </div>
 
-ERPNext as a monolith includes the following areas for managing businesses:
+## Welcome to Empress One
 
-1. [Accounting](https://erpnext.com/open-source-accounting)
-1. [Warehouse Management](https://erpnext.com/distribution/warehouse-management-system)
-1. [CRM](https://erpnext.com/open-source-crm)
-1. [Sales](https://erpnext.com/open-source-sales-purchase)
-1. [Purchase](https://erpnext.com/open-source-sales-purchase)
-1. [HRMS](https://erpnext.com/open-source-hrms)
-1. [Project Management](https://erpnext.com/open-source-projects)
-1. [Support](https://erpnext.com/open-source-help-desk-software)
-1. [Asset Management](https://erpnext.com/open-source-asset-management-software)
-1. [Quality Management](https://erpnext.com/docs/user/manual/en/quality-management)
-1. [Manufacturing](https://erpnext.com/open-source-manufacturing-erp-software)
-1. [Website Management](https://erpnext.com/open-source-website-builder-software)
-1. [Customize ERPNext](https://erpnext.com/docs/user/manual/en/customize-erpnext)
-1. [And More](https://erpnext.com/docs/user/manual/en/)
+Empress One is the central application of the Empress ecosystem, designed to streamline, automate, and simplify complex business processes, providing automation and valuable insights across your organization. 
 
-ERPNext is built on the [Frappe Framework](https://github.com/frappe/frappe), a full-stack web app framework built with Python & JavaScript.
+* [Manage](https://empress.eco/product/manage/): Streamline Operations
+* [Finance](https://empress.eco/product/finance/): Control Finances
+* [Talent](https://empress.eco/product/talent/): Manage Employees
+* [Sell](https://empress.eco/product/sell/): Drive Sales
+* [Experience](https://empress.eco/product/experience/): Support Customers
+* [Connect](https://empress.eco/product/connect/): Connect Teams
+* [Build](https://empress.eco/product/build/): Improve Products
+* [Analyze](https://empress.eco/product/analyze/): Gain Insights
+* [Automate](https://empress.eco/product/automate/): Automate Process
+* [Customize](https://empress.eco/product/customize/): Tailor Your Solutions.
+
 
 ## Installation
 
-<div align="center" style="max-height: 40px;">
-    <a href="https://frappecloud.com/erpnext/signup">
-        <img src=".github/try-on-f-cloud-button.svg" height="40">
-    </a>
-    <a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/frappe/frappe_docker/main/pwd.yml">
-      <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD" height="37"/>
-    </a>
-</div>
+### By Empress
 
-> Login for the PWD site: (username: Administrator, password: admin)
+For a hosted and fully managed installation of Empress One, contact [Empress Ecosystem](https://empress.eco/).
 
 ### Containerized Installation
 
-Use docker to deploy ERPNext in production or for development of [Frappe](https://github.com/frappe/frappe) apps. See https://github.com/frappe/frappe_docker for more details.
+Deploy Empress One using Docker for production or development. For details, see [Docker Instructions](https://github.com/empress-eco/frappe_docker).
 
 ### Manual Install
 
-The Easy Way: our install script for bench will install all dependencies (e.g. MariaDB). See https://github.com/frappe/bench for more details.
+Use our easy install script for Bench, which installs all dependencies, including MariaDB. For more information, see [Bench Documentation](https://github.com/empress-eco/bench).
 
-New passwords will be created for the ERPNext "Administrator" user, the MariaDB root user, and the frappe user (the script displays the passwords and saves them to ~/frappe_passwords.txt).
+## Community and Learning
 
-
-## Learning and community
-
-1. [Frappe School](https://frappe.school) - Learn Frappe Framework and ERPNext from the various courses by the maintainers or from the community.
-2. [Official documentation](https://docs.erpnext.com/) - Extensive documentation for ERPNext.
-3. [Discussion Forum](https://discuss.erpnext.com/) - Engage with community of ERPNext users and service providers.
-4. [Telegram Group](https://erpnext_public.t.me) - Get instant help from huge community of users.
+* [Website](https://empress.eco/): Learn about Empress One from courses by maintainers or the community.
+* [Community](https://empress.eco/community/): Access extensive resources for Empress One.
+* [Forum](https://grow.empress.eco/): Join discussions with other Empress One users and service providers.
+* [Discord](https://discord.com/invite/3xcm97vBYX): Instant help from our community of users.
 
 
-## Contributing
+## Attribution and Licenses
 
-1. [Issue Guidelines](https://github.com/frappe/erpnext/wiki/Issue-Guidelines)
-1. [Report Security Vulnerabilities](https://erpnext.com/security)
-1. [Pull Request Requirements](https://github.com/frappe/erpnext/wiki/Contribution-Guidelines)
+Empress One, originally based on ERPNext, is developed by Empress Ecosystems LLC and the open-source community. ERPNext is a creation of Frappe Technologies Pvt Ltd and its contributors, licensed under GNU General Public License (v3) for the code and Creative Commons (CC-BY-SA-3.0) for the documentation.
 
-## License
-
-GNU/General Public License (see [license.txt](license.txt))
-
-The ERPNext code is licensed as GNU General Public License (v3) and the Documentation is licensed as Creative Commons (CC-BY-SA-3.0) and the copyright is owned by Frappe Technologies Pvt Ltd (Frappe) and Contributors.
-
-By contributing to ERPNext, you agree that your contributions will be licensed under its GNU General Public License (v3).
+By contributing to Empress One, you agree that your contributions will be licensed under the GNU General Public License (v3).
 
 ## Logo and Trademark Policy
 
