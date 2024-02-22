@@ -1,65 +1,55 @@
 <div align="center">
-    <a href="https://empress.eco/">
-        <img src="https://avatars.githubusercontent.com/u/46308912?s=96&v=4" height="50">
-    </a>
-    <h2>Empress One</h2>
-    <p align="center">
-        <p>Focus On Work That Matters.</p>
-    </p>
-
-[![CI](https://github.com/frappe/erpnext/actions/workflows/server-tests-mariadb.yml/badge.svg?event=schedule)](https://github.com/frappe/erpnext/actions/workflows/server-tests-mariadb.yml)
-[![Open Source Helpers](https://www.codetriage.com/frappe/erpnext/badges/users.svg)](https://www.codetriage.com/frappe/erpnext)
-[![codecov](https://codecov.io/gh/frappe/erpnext/branch/develop/graph/badge.svg?token=0TwvyUg3I5)](https://codecov.io/gh/frappe/erpnext)
-[![docker pulls](https://img.shields.io/docker/pulls/frappe/erpnext-worker.svg)](https://hub.docker.com/r/frappe/erpnext-worker)
-
-[https://empress.eco/app/one/](https://empress.eco/app/one/)
-
+  <img src="https://grow.empress.eco/uploads/default/original/2X/1/1f1e1044d3864269d2a613577edb9763890422ab.png" height="50" alt="Empress One logo">
 </div>
 
-## Welcome to Empress One
+Empress One is a comprehensive application within the Empresssystem, designed to streamline operations, manage finances, and automate processes, providing valuable insights for data-driven decision making. 
 
-Empress One is the central application of the Empress ecosystem, designed to streamline, automate, and simplify complex business processes, providing automation and valuable insights across your organization. 
+Explore our [documentation](https://empress.eco/), report a [bug](https://github.com/empress-eco/erp/issues), or request a [feature](https://github.com/empress-eco/erp/issues).
 
-* [Manage](https://empress.eco/product/manage/): Streamline Operations
-* [Finance](https://empress.eco/product/finance/): Control Finances
-* [Talent](https://empress.eco/product/talent/): Manage Employees
-* [Sell](https://empress.eco/product/sell/): Drive Sales
-* [Experience](https://empress.eco/product/experience/): Support Customers
-* [Connect](https://empress.eco/product/connect/): Connect Teams
-* [Build](https://empress.eco/product/build/): Improve Products
-* [Analyze](https://empress.eco/product/analyze/): Gain Insights
-* [Automate](https://empress.eco/product/automate/): Automate Process
-* [Customize](https://empress.eco/product/customize/): Tailor Your Solutions.
+## About Empress One
+Empress One serves as a hub for managing various aspects of your organization. It is ideal for organizations seeking to leverage technology for efficiency and data-driven decision making. 
 
+## Key Features
+- Streamline operations
+- Control finances
+- Manage employees
+- Drive sales
+- Support customers
+- Connect teams
+- Improve products
+- Gain insights
+- Automate processes
+- Tailor your solutions
 
-## Installation
+## Technical Stack and Setup Instructions
+Empress One operates using Docker and MariaDB. To get started, ensure you have Docker installed for a containerized installation or MariaDB for a manual installation.
 
-### By Empress
+You can install Empress One through a hosted and fully managed installation, a containerized installation using Docker, or a manual installation using the Bench script.
 
-For a hosted and fully managed installation of Empress One, contact [Empress Ecosystem](https://empress.eco/).
+**Hosted and Fully Managed Installation**
+Contact [Empresssystem](https://empress.eco/) for a hosted and fully managed installation.
 
-### Containerized Installation
+**Containerized Installation**
+See the [Docker Instructions](https://github.com/empress-eco/Empress_docker) for a detailed guide.
 
-Deploy Empress One using Docker for production or development. For details, see [Docker Instructions](https://github.com/empress-eco/frappe_docker).
+**Manual Installation**
+Follow the [Bench Documentation](https://github.com/empress-eco/bench) for a step-by-step process.
 
-### Manual Install
+## Usage
+To get started with Empress One, explore each module using the links provided in the key features section. These modules are designed to manage various aspects of your organization, providing a comprehensive solution for your business needs.
 
-Use our easy install script for Bench, which installs all dependencies, including MariaDB. For more information, see [Bench Documentation](https://github.com/empress-eco/bench).
+## Contribution Guidelines
+We value your contributions! Here's how you can contribute:
 
-## Community and Learning
+- Fork the Project
+- Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+- Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+- Push to the Branch (`git push origin feature/AmazingFeature`)
+- Open a Pull Request
 
-* [Website](https://empress.eco/): Learn about Empress One from courses by maintainers or the community.
-* [Community](https://empress.eco/community/): Access extensive resources for Empress One.
-* [Forum](https://grow.empress.eco/): Join discussions with other Empress One users and service providers.
-* [Discord](https://discord.com/invite/3xcm97vBYX): Instant help from our community of users.
+## License and Acknowledgements
+This project is licensed under the MIT License. Your contributions are also licensed under the same.
 
+We would like to express our gratitude to the Empress Community, the architects behind the essential tools that power this project. Their innovation and dedication have been instrumental in building the foundations and functionalities we rely on.
 
-## Attribution and Licenses
-
-Empress One, originally based on ERPNext, is developed by Empress Ecosystems LLC and the open-source community. ERPNext is a creation of Frappe Technologies Pvt Ltd and its contributors, licensed under GNU General Public License (v3) for the code and Creative Commons (CC-BY-SA-3.0) for the documentation.
-
-By contributing to Empress One, you agree that your contributions will be licensed under the GNU General Public License (v3).
-
-## Logo and Trademark Policy
-
-Please read our [Logo and Trademark Policy](TRADEMARK_POLICY.md).
+Clone our project [here](https://github.com/empress-eco/erp.git).
