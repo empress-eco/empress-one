@@ -1,10 +1,15 @@
 <div align="center">
+
+
+<div align="center">
   <img src="https://grow.empress.eco/uploads/default/original/2X/1/1f1e1044d3864269d2a613577edb9763890422ab.png" height="50" alt="Empress One logo">
 </div>
 
 Empress One is a comprehensive application within the Empresssystem, designed to streamline operations, manage finances, and automate processes, providing valuable insights for data-driven decision making. 
 
 Explore our [documentation](https://empress.eco/), report a [bug](https://github.com/empress-eco/erp/issues), or request a [feature](https://github.com/empress-eco/erp/issues).
+
+</div>
 
 ## About Empress One
 Empress One serves as a hub for managing various aspects of your organization. It is ideal for organizations seeking to leverage technology for efficiency and data-driven decision making. 
