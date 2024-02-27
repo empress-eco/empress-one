@@ -543,7 +543,9 @@ frappe.ui.form.on('Stock Entry', {
 
 		let fields = [
 			{"fieldname":"bom", "fieldtype":"Link", "label":__("BOM"),
-			options:"BOM", reqd: 1, get_query: filters()},
+			options:"BOM", reqd: 1, get_query: () => {
+				return {filters: { docstatus:1, "is_active": 1 }};
+			}},
 			{"fieldname":"source_warehouse", "fieldtype":"Link", "label":__("Source Warehouse"),
 			options:"Warehouse"},
 			{"fieldname":"target_warehouse", "fieldtype":"Link", "label":__("Target Warehouse"),
@@ -941,7 +943,7 @@ erpnext.stock.StockEntry = class StockEntry extends erpnext.stock.StockControlle
 		if (this.frm.doc.docstatus===1 && erpnext.is_perpetual_inventory_enabled(this.frm.doc.company)) {
 			this.show_general_ledger();
 		}
-		erpnext.hide_company();
+		erpnext.hide_company(this.frm);
 		erpnext.utils.add_item(this.frm);
 	}
 
@@ -1178,7 +1180,8 @@ erpnext.stock.select_batch_and_serial_no = (frm, item) => {
 							if (r) {
 								frappe.model.set_value(item.doctype, item.name, {
 									"serial_and_batch_bundle": r.name,
-									"qty": Math.abs(r.total_qty)
+									"use_serial_batch_fields": 0,
+									"qty": Math.abs(r.total_qty) / flt(item.conversion_factor || 1, precision("conversion_factor", item))
 								});
 							}
 						}

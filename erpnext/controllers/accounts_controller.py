@@ -216,6 +216,19 @@ class AccountsController(TransactionBase):
 					)
 				)
 
+			if self.get("is_return") and self.get("return_against") and not self.get("is_pos"):
+				# if self.get("is_return") and self.get("return_against"):
+				document_type = "Credit Note" if self.doctype == "Sales Invoice" else "Debit Note"
+				frappe.msgprint(
+					_(
+						"{0} will be treated as a standalone {0}. Post creation use {1} tool to reconcile against {2}."
+					).format(
+						document_type,
+						get_link_to_form("Payment Reconciliation"),
+						get_link_to_form(self.doctype, self.get("return_against")),
+					)
+				)
+
 			pos_check_field = "is_pos" if self.doctype == "Sales Invoice" else "is_paid"
 			if cint(self.allocate_advances_automatically) and not cint(self.get(pos_check_field)):
 				self.set_advances()
@@ -333,6 +346,12 @@ class AccountsController(TransactionBase):
 			ple = frappe.qb.DocType("Payment Ledger Entry")
 			frappe.qb.from_(ple).delete().where(
 				(ple.voucher_type == self.doctype) & (ple.voucher_no == self.name)
+				| (
+					(ple.against_voucher_type == self.doctype)
+					& (ple.against_voucher_no == self.name)
+					& ple.delinked
+					== 1
+				)
 			).run()
 			frappe.db.sql(
 				"delete from `tabGL Entry` where voucher_type=%s and voucher_no=%s", (self.doctype, self.name)
@@ -2434,27 +2453,20 @@ class AccountsController(TransactionBase):
 		doc_before_update = self.get_doc_before_save()
 		accounting_dimensions = get_accounting_dimensions() + ["cost_center", "project"]
 
-		# Check if opening entry check updated
-		needs_repost = doc_before_update.get("is_opening") != self.is_opening
+		# Parent Level Accounts excluding party account
+		fields_to_check += accounting_dimensions
+		for field in fields_to_check:
+			if doc_before_update.get(field) != self.get(field):
+				return True
 
-		if not needs_repost:
-			# Parent Level Accounts excluding party account
-			fields_to_check += accounting_dimensions
-			for field in fields_to_check:
-				if doc_before_update.get(field) != self.get(field):
-					needs_repost = 1
-					break
+		# Check for child tables
+		for table in child_tables:
+			if check_if_child_table_updated(
+				doc_before_update.get(table), self.get(table), child_tables[table]
+			):
+				return True
 
-			if not needs_repost:
-				# Check for child tables
-				for table in child_tables:
-					needs_repost = check_if_child_table_updated(
-						doc_before_update.get(table), self.get(table), child_tables[table]
-					)
-					if needs_repost:
-						break
-
-		return needs_repost
+		return False
 
 	@frappe.whitelist()
 	def repost_accounting_entries(self):
@@ -3483,15 +3495,12 @@ def update_child_qty_rate(parent_doctype, trans_items, parent_doctype_name, chil
 def check_if_child_table_updated(
 	child_table_before_update, child_table_after_update, fields_to_check
 ):
-	accounting_dimensions = get_accounting_dimensions() + ["cost_center", "project"]
-	# Check if any field affecting accounting entry is altered
-	for index, item in enumerate(child_table_after_update):
-		for field in fields_to_check:
-			if child_table_before_update[index].get(field) != item.get(field):
-				return True
+	fields_to_check = list(fields_to_check) + get_accounting_dimensions() + ["cost_center", "project"]
 
-		for dimension in accounting_dimensions:
-			if child_table_before_update[index].get(dimension) != item.get(dimension):
+	# Check if any field affecting accounting entry is altered
+	for index, item in enumerate(child_table_before_update):
+		for field in fields_to_check:
+			if child_table_after_update[index].get(field) != item.get(field):
 				return True
 
 	return False
